@@ -1,1 +1,17 @@
+services:
+  postgres:
+    image: postgres:17
 
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_DB: ai_crm
+      POSTGRES_USER: ai_crm_user
+      POSTGRES_PASSWORD: ai_crm_password
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
